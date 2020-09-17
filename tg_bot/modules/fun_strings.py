@@ -51,21 +51,21 @@ RUN_STRINGS = (
 )
 
 SLAP_SAITAMA_TEMPLATES = (
-    "Slap me one more time and I'll mute you.",
-    "Stop slapping me. 😡.",
+    "Slap saya lagi lalu saya akan membisukan anda.",
+    "Berhenti slap saya 😡",
     [
-        "I am muting you for a minute.",  # normal reply
-        "Stop slapping me just because I can't mute you. 🤧.",  # reply to admin
+        "Saya membisukan anda untuk beberapa saat.",  # normal reply
+        "Berhenti slap saya karena saya tidak bisa membisukan anda 🤧",  # reply to admin
         "tmute"  # command
     ]
 )
 
 
 SLAP_TEMPLATES = (
-    "{user2} was shot by {user1}.",
-    "{user2} walked into a cactus while trying to escape {user1}.",
-    "{user2} drowned whilst trying to escape {user1}.",
-    "{user2} fell into a patch of cacti.",
+    "{user1} menendang bokong {user2} dengan keras.",
+    "{user2} berlari diatas kaktus karena mencoba kabur dari {user1}.",
+    "{user2} memukul dirinya sendiri dengan {item}.",
+    "{user} .",
     "{user2} went up in flames.",
     "{user2} burned to death.",
     "{user2} was burnt to a crisp whilst fighting {user1}.",
