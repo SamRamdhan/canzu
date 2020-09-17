@@ -38,16 +38,16 @@ def send_rules(update, chat_id, from_pm=False):
     if from_pm and rules:
         bot.send_message(user.id, text, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True)
     elif from_pm:
-        bot.send_message(user.id, "The group admins haven't set any rules for this chat yet. "
-                                  "This probably doesn't mean it's lawless though...!")
+        bot.send_message(user.id, "[Peraturan Grup Kerabat Online](https://t.me/KerabatOnline_Ch/71)"
+                                  "\n\n⬆⬆⬆⬆⬆⬆")
     elif rules:
-        update.effective_message.reply_text("Contact me in PM to get this group's rules.",
+        update.effective_message.reply_text("Hubungi saya di PM untuk mendapat peraturan grup ini.",
                                             reply_markup=InlineKeyboardMarkup(
-                                                [[InlineKeyboardButton(text="Rules",
+                                                [[InlineKeyboardButton(text="Peraturan",
                                                                        url=f"t.me/{bot.username}?start={chat_id}")]]))
     else:
-        update.effective_message.reply_text("The group admins haven't set any rules for this chat yet. "
-                                            "This probably doesn't mean it's lawless though...!")
+        update.effective_message.reply_text("[Peraturan Grup Kerabat Online](https://t.me/KerabatOnline_Ch/71)"
+                                            "\n\n⬆⬆⬆⬆⬆⬆")
 
 
 @run_async
