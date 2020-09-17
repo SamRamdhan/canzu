@@ -20,7 +20,7 @@ def afk(bot: Bot, update: Update):
         reason = args[1]
 
     sql.set_afk(update.effective_user.id, reason)
-    update.effective_message.reply_text("{} is now away!".format(update.effective_user.first_name))
+    update.effective_message.reply_text("{} sekarang AFK!".format(update.effective_user.first_name))
 
 
 @run_async
@@ -33,14 +33,14 @@ def no_longer_afk(bot: Bot, update: Update):
     res = sql.rm_afk(user.id)
     if res:
         options = [
-            '{} is here!',
-            '{} is back!',
-            '{} is now in the chat!',
-            '{} is awake!',
-            '{} is back online!',
-            '{} is finally here!',
-            'Welcome back!, {}',
-            'Where is {}?\nIn the chat!'
+            '{} sekarang disini!',
+            '{} sekarang kembali!',
+            '{} sekarang berada di chat!',
+            '{} telah kembali!',
+            '{} kembali aktif!',
+            '{} sekarang telah kembali!',
+            'Selamat datang kembali!, {}',
+            'Ada yang rindu {}?\nDia telah disini!'
         ]
         chosen_option = random.choice(options)
         update.effective_message.reply_text(chosen_option.format(update.effective_user.first_name))
@@ -71,9 +71,9 @@ def reply_afk(bot: Bot, update: Update):
                 valid, reason = sql.check_afk_status(user_id)
                 if valid:
                     if not reason:
-                        res = "{} is AFK!".format(fst_name)
+                        res = "{} sedang AFK!".format(fst_name)
                     else:
-                        res = "{} is AFK!\nReason:\n{}".format(fst_name, reason)
+                        res = "{} sedang AFK!\nAlasannya :\n{}".format(fst_name, reason)
                     message.reply_text(res)
 
 
@@ -82,9 +82,9 @@ def __gdpr__(user_id):
 
 
 __help__ = """
- - /afk <reason>: mark yourself as AFK(away from keyboard).
- - brb <reason>: same as the afk command - but not a command.
-When marked as AFK, any mentions will be replied to with a message to say you're not available!
+ - /afk <alasan>: menandai anda AFK (away from keyboard).
+ - brb <reason>: sama seperti perintah afk - tapi ini bukan perintah.
+Ketika AFK, semua mention akan dibalas dengan pesan yang mengatakan bahwa anda sedang tidak tersedia!
 """
 
 AFK_HANDLER = DisableAbleCommandHandler("afk", afk)
