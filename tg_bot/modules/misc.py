@@ -113,20 +113,20 @@ def info(bot: Bot, update: Update, args: List[str]):
     else:
         return
 
-    text = (f"<b>user information:</b>\n"
+    text = (f"<b>Info Pengguna:</b>\n"
             f"🆔️ID: <code>{user.id}</code>\n"
-            f"👤First Name: {html.escape(user.first_name)}")
+            f"👤Nama depan: {html.escape(user.first_name)}")
 
     if user.last_name:
-        text += f"\n👤Last Name: {html.escape(user.last_name)}"
+        text += f"\n👤Nama belakang: {html.escape(user.last_name)}"
 
     if user.username:
         text += f"\n👤Username: @{html.escape(user.username)}"
 
-    text += f"\n👤Permanent user link: {mention_html(user.id, 'link')}"
+    text += f"\n👤Link akun: {mention_html(user.id, 'link')}"
 
     num_chats = sql.get_user_num_chats(user.id)
-    text += f"\n🌍Chat count: <code>{num_chats}</code>"
+    text += f"\n🌍Grup bersama: <code>{num_chats}</code>"
 
     try:
         user_member = chat.get_member(user.id)
@@ -142,7 +142,7 @@ def info(bot: Bot, update: Update, args: List[str]):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n😎The Disaster level of this person is 'LEGEND'."
+        text += "\n😎Orang ini adalah 'LEGEND'."
         disaster_level_present = True
     elif user.id in DEV_USERS:
         text += "\n🔥This member is one of 'Hero Association'."
