@@ -34,38 +34,38 @@ PM_START_TEXT = """
 ┈┈┈┈╲┊┊┊┊╱┈┈┈┈
 ┈┈┈┈▕╲▂▂╱▏┈┈┈┈
 ╱▔▔▔▔┊┊┊┊▔▔▔▔╲
-HOI    {}, MY NAME IS {} !
+Halo bro/sis {}, nama saya {}
 
-I AM A GROUP MANAGER BOT MAINTAINED BY 
+Saya adalah bot admin khusus untuk grup @KerabatOnline.
+Grup untuk bermain berbagai macam game yang ada ditelegram atau untuk mencari kenalan baru.
+Pengguna ini adalah [Foundernya](tg://user?id={}).
 
-[THIS LEGEND](tg://user?id={}).
+Program bot saya dikhususkan untuk kepentingan Kerabat Online Grup.
+Jadi tidak tersedia untuk grup lain, mohon pengertiannya.
 
-HIT HELP FOR COMMANDS  /help
-
-I AM COMPLETELY OPEN SOURCE
-
-MY SOURCE CODE IS AVAILABLE TO YOU
-
-[HERE](https://github.com/leobrownlee/phantom)
+Gabung dan ramaikan juga
+[Kerabat Online Channel](https://t.me/KerabatOnline_Ch)
+[Kerabat Online Moment](https://t.me/KerabatMoment)
+[Kerabat Online Twitter](https://twitter.com/KerabatOnline)
 
 """
 
 HELP_STRINGS = """
 
-Hello! my name *{}*.
+Halo! nama saya *{}*.
 
-*Main* commands available:
- - /start: start the bot
- - /help: PM's you this message.
- - /help <module name>: PM's you info about that module.
+*Utama* perintah tersedia:
+ - /start: untuk memulai bot
+ - /help: mengirim perintah di PM.
+ - /help <nama modul>: memberikan info tentang modulnya.
  - /settings:
-   - in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
+   - di PM: akan mengirimkan pengaturan untuk semua modul pendukung.
+   - in a group: akan mengarahkan anda ke PM, dengan semua pengaturan chat.
 
 
 {}
-And the following:
-""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
+Dan diikuti:
+""".format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nSemua perintah bisa digunakan antara / atau !.\n")
 
 
 IMPORTED = {}
@@ -161,7 +161,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
 
     else:
-        update.effective_message.reply_text("Yo, whadup?🤧")
+        update.effective_message.reply_text("Hai, Dapanih? 😎🤘🏼")
 
 
 def send_start(bot, update):
@@ -212,7 +212,7 @@ def help_button(bot: Bot, update: Update):
     try:
         if mod_match:
             module = mod_match.group(1)
-            text = "Here is the help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+            text = "Ini adalah perintah untuk bantuan *{}* modul:\n".format(HELPABLE[module].__mod_name__) \
                    + HELPABLE[module].__help__
             query.message.reply_text(text=text,
                                      parse_mode=ParseMode.MARKDOWN,
@@ -260,7 +260,7 @@ def get_help(bot: Bot, update: Update):
     # ONLY send help in PM
     if chat.type != chat.PRIVATE:
 
-        update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
+        update.effective_message.reply_text("Hubungi saya di PM untuk melihat daftar perintah yang tersedia.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="Help",
                                                                        url="t.me/{}?start=help".format(
@@ -269,9 +269,9 @@ def get_help(bot: Bot, update: Update):
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
-        text = "Here is the available help for the *{}* module:\n".format(HELPABLE[module].__mod_name__) \
+        text = "Ini adalah bantuan yang tersedia untuk *{}* modul:\n".format(HELPABLE[module].__mod_name__) \
                + HELPABLE[module].__help__
-        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="Back", callback_data="help_back")]]))
+        send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text="Kembali", callback_data="help_back")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
