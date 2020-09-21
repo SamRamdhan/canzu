@@ -116,11 +116,11 @@ def __user_info__(user_id):
     bio = html.escape(sql.get_user_bio(user_id) or "")
     me = html.escape(sql.get_user_me_info(user_id) or "")
     if bio and me:
-        return f"\n<b>About user:</b>\n{me}\n<b>What others say:</b>\n{bio}\n"
+        return f"\n<b>Tentang pengguna:</b>\n{me}\n<b>Yang orang lain katakan:</b>\n{bio}\n"
     elif bio:
-        return f"\n<b>What others say:</b>\n{bio}\n"
+        return f"\n<b>Yang orang lain katakan:</b>\n{bio}\n"
     elif me:
-        return f"\n<b>About user:</b>\n{me}\n"
+        return f"\n<b>Tentang pengguna:</b>\n{me}\n"
     else:
         return "\n"
 
