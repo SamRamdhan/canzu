@@ -324,7 +324,7 @@ def rmchatpic(bot: Bot, update: Update):
 def adminlist(bot: Bot, update: Update):
     administrators = update.effective_chat.get_administrators()
     msg = update.effective_message
-    text = "Admins in *{}*:".format(update.effective_chat.title or "this chat")
+    text = "Daftar admin di *{}*:".format(update.effective_chat.title or "this chat")
     for admin in administrators:
         user = admin.user
         status = admin.status
@@ -332,8 +332,8 @@ def adminlist(bot: Bot, update: Update):
         if user.username:
             name = name = escape_markdown("@" + user.username)
         if status == "creator":
-            text += "\n 🔱 Creator:"
-            text += "\n` • `{} \n\n • *Administrators*:".format(name)
+            text += "\n 🔱 Pemilik:"
+            text += "\n` • `{} \n\n • *Administrator*:".format(name)
     for admin in administrators:
         user = admin.user
         status = admin.status
@@ -345,14 +345,14 @@ def adminlist(bot: Bot, update: Update):
             
         if status == "administrator":
             text += "\n`👮🏻 `{}".format(name)
-            members = "\n\n*Members:*\n`🙍‍♂️ ` {} users".format(count)
+            members = "\n\n*Anggota:*\n👤  `{} pengguna`".format(count)
             
     msg.reply_text(text + members, parse_mode=ParseMode.MARKDOWN)
 
 
 
 def __chat_settings__(chat_id, user_id):
-    return "You are *admin*: `{}`".format(
+    return "Anda adalah *admin*: `{}`".format(
         dispatcher.bot.get_chat_member(chat_id, user_id).status in ("administrator", "creator"))
 
 
