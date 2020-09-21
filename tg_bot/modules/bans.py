@@ -52,11 +52,11 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         return log_message
 
     log = (f"<b>{html.escape(chat.title)}:</b>\n"
-           f"#BANNED\n"
+           f"#DILARANG\n"
            f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-           f"<b>User:</b> {mention_html(member.user.id, member.user.first_name)}")
+           f"<b>Pengguna:</b> {mention_html(member.user.id, member.user.first_name)}")
     if reason:
-        log += "\n<b>Reason:</b> {}".format(reason)
+        log += "\n<b>Alasan:</b> {}".format(reason)
 
     try:
         chat.kick_member(user_id)
