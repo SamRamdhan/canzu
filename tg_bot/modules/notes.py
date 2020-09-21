@@ -141,7 +141,7 @@ def save(bot: Bot, update: Update):
 
     sql.add_note_to_db(chat_id, note_name, text, data_type, buttons=buttons, file=content)
 
-    msg.reply_text(f"Yas! Added {note_name}.\nGet it with /get {note_name}, or #{note_name}")
+    msg.reply_text(f"Yeah! menambahkan {note_name}.\nDapatkan catatan dengan ketik /get {note_name}, atau #{note_name}")
 
     if msg.reply_to_message and msg.reply_to_message.from_user.is_bot:
         if text:
@@ -165,7 +165,7 @@ def clear(bot: Bot, update: Update, args: List[str]):
         notename = args[0]
 
         if sql.rm_note(chat_id, notename):
-            update.effective_message.reply_text("Successfully removed note.")
+            update.effective_message.reply_text("Catatan dihapus.")
         else:
             update.effective_message.reply_text("That's not a note in my database!")
 
@@ -175,7 +175,7 @@ def list_notes(bot: Bot, update: Update):
     chat_id = update.effective_chat.id
     note_list = sql.get_all_chat_notes(chat_id)
 
-    msg = "*Notes in chat:*\n"
+    msg = "*Catatan di grup:*\n"
     for note in note_list:
         note_name = escape_markdown(f" - {note.name}\n")
         if len(msg) + len(note_name) > MAX_MESSAGE_LENGTH:
@@ -183,8 +183,8 @@ def list_notes(bot: Bot, update: Update):
             msg = ""
         msg += note_name
 
-    if msg == "*Notes in chat:*\n":
-        update.effective_message.reply_text("No notes in this chat!")
+    if msg == "*Catatan di grup:*\n":
+        update.effective_message.reply_text("Belum ada catatan di grup ini!")
 
     elif len(msg) != 0:
         update.effective_message.reply_text(msg, parse_mode=ParseMode.MARKDOWN)
