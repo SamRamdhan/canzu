@@ -32,7 +32,7 @@ EDIT_TIMES = 9
 
 
 #sleep how many times after each edit in 'hack' 
-EDIT_SLEEP = 1
+EDIT_SLEEP = 3
 #edit how many times in 'hack' 
 EDIT_TIMES = 10
 
@@ -127,10 +127,10 @@ love_siren = [
 
 hack_you = [
             "Target peretasan telah ditentukan...",
-            "User online: True\nTelegram access: True\nRead Storage: True ",
-            "Meretas... 20.63%\n[███░░░░░░░░░░░░░░░░░]",    
-            "Meretas... 86.21%\n[███████████████░░░░░]",
-            "Meretas... 93.50%\n[█████████████████░░░]",
+            "Target: Dikunci\nAkses telegaram: Berhasil\nPenyimpanan: Sedang Membobol",
+            "Meretas... 20.63%\n[███░░░░░░░░░░░░░░░░░] Proses",    
+            "Meretas... 86.21%\n[███████████████░░░░░] Proses",
+            "Meretas... 93.50%\n[█████████████████░░░] Proses",
             "Meretas....  100%\n[████████████████████]\n\nTarget sukses diretas.\n\nHubungi Boss saya @SamRamadhan untuk keamanan akun anda",
 ]
 
