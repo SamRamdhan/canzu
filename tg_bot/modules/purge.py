@@ -67,12 +67,12 @@ def purge(bot: Bot, update: Update, args: List[str]) -> str:
             elif err.message != "Message to delete not found":
                 LOGGER.exception("Error while purging chat messages.")
 
-        bot.send_message(chat.id, f"Purge <code>{delete_to - start_message_id}</code> messages.",
+        bot.send_message(chat.id, f"Bersihkan <code>{delete_to - start_message_id}</code> messages.",
                          parse_mode=ParseMode.HTML)
         return (f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#PURGE\n"
+                f"#BERSIHKAN\n"
                 f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"Purged <code>{delete_to - start_message_id}</code> messages.")
+                f"Membersihkan <code>{delete_to - start_message_id}</code> messages.")
 
     return ""
 
@@ -88,9 +88,9 @@ def del_message(bot: Bot, update: Update) -> str:
             update.effective_message.reply_to_message.delete()
             update.effective_message.delete()
             return (f"<b>{html.escape(chat.title)}:</b>\n"
-                    f"#DEL\n"
+                    f"#HAPUS\n"
                     f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                    f"Message deleted.")
+                    f"Pesan dihapus.")
     else:
         update.effective_message.reply_text("Whadya want to delete?")
 
