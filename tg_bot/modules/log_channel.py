@@ -26,10 +26,10 @@ if is_module_loaded(FILENAME):
 
             if result:
                 datetime_fmt = "%H:%M - %d-%m-%Y"
-                result += f"\n<b>Event Stamp</b>: <code>{datetime.utcnow().strftime(datetime_fmt)}</code>"
+                result += f"\n<b>Event stamp</b>: <code>{datetime.utcnow().strftime(datetime_fmt)}</code>"
 
                 if message.chat.type == chat.SUPERGROUP and message.chat.username:
-                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                    result += f'\n<b>Tautan:</b> <a href="https://t.me/{chat.username}/{message.message_id}">klik disini</a>'
                 log_chat = sql.get_chat_log_channel(chat.id)
                 if log_chat:
                     send_log(bot, log_chat, chat.id, result)
@@ -56,7 +56,7 @@ if is_module_loaded(FILENAME):
                 result += "\n<b>Event Stamp</b>: <code>{}</code>".format(datetime.utcnow().strftime(datetime_fmt))
 
                 if message.chat.type == chat.SUPERGROUP and message.chat.username:
-                    result += f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                    result += f'\n<b>Tautan:</b> <a href="https://t.me/{chat.username}/{message.message_id}">klik disini</a>'
                 log_chat = str(GBAN_LOGS)
                 if log_chat:
                     send_log(bot, log_chat, chat.id, result)
