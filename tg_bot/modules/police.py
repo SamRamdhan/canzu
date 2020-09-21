@@ -14,7 +14,7 @@ from tg_bot.modules.helper_funcs.extraction import extract_user
 #sleep how many times after each edit in 'police' 
 EDIT_SLEEP = 1
 #edit how many times in 'police' 
-EDIT_TIMES = 3
+EDIT_TIMES = 100
 
 police_siren = [
             "🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵\n🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵\n🔴🔴🔴⬜️⬜️⬜️🔵🔵🔵",
@@ -26,11 +26,11 @@ police_siren = [
 @user_admin
 @run_async
 def police(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('Police is coming!') 
+    msg = update.effective_message.reply_text('Polisi akan datang!') 
     for x in range(EDIT_TIMES):
         msg.edit_text(police_siren[x%2])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('Police is here!')
+    msg.edit_text('Polisi telah sampai!')
 
 
 __help__ = """
