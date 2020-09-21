@@ -93,10 +93,10 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_text("Oh, Genos? Let's get this moving.")
+                update.effective_message.reply_text("Hi, Selamat Bergabung.")
                 welcome_log = (f"{html.escape(chat.title)}\n"
-                               f"#USER_JOINED\n"
-                               f"Bot Owner just joined the chat")
+                               f"#NEWMEM\n"
+                               f"Pemilik bot bergabung ke grup ini")
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
@@ -197,9 +197,9 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
                         }
                     })
                     new_join_mem = f"[{escape_markdown(new_mem.first_name)}](tg://user?id={user.id})"
-                    message = msg.reply_text(f"{new_join_mem}, click the button below to prove you're human.\nYou have 160 seconds.",
+                    message = msg.reply_text(f"{new_join_mem}, Klik tombol dibawah untuk verifikasi jika anda ingin bergabung ke grup ini.\nAnda mempunyai waktu 160 detik untuk verifikasi.",
                                              reply_markup=InlineKeyboardMarkup([{InlineKeyboardButton(
-                                                 text="Yes, I'm human.",
+                                                 text="Saya Ingin Bergabung",
                                                  callback_data=f"user_join_({new_mem.id})")}]),
                                              parse_mode=ParseMode.MARKDOWN)
                     bot.restrict_chat_member(chat.id, new_mem.id,
@@ -231,8 +231,8 @@ def new_member(bot: Bot, update: Update, job_queue: JobQueue):
             return welcome_log
 
         return (f"{html.escape(chat.title)}\n"
-                f"#USER_JOINED\n"
-                f"<b>User</b>: {mention_html(user.id, user.first_name)}\n"
+                f"#NEWMEM\n"
+                f"<b>Pengguna</b>: {mention_html(user.id, user.first_name)}\n"
                 f"<b>ID</b>: <code>{user.id}</code>")
 
     return ""
