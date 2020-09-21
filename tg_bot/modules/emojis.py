@@ -126,12 +126,12 @@ love_siren = [
 
 
 hack_you = [
-            "Target peretasan telah ditentukan...",
-            "Target: Dikunci\nAkses telegaram: Berhasil\nPenyimpanan: Sedang Membobol",
+            "Mencoba membobol...",
+            "Target: Dikunci\nAkses telegram: Berhasil\nPenyimpanan: Sedang Membobol",
             "Meretas... 20.63%\n[███░░░░░░░░░░░░░░░░░] Proses",    
             "Meretas... 86.21%\n[███████████████░░░░░] Proses",
             "Meretas... 93.50%\n[█████████████████░░░] Proses",
-            "Meretas....  100%\n[████████████████████]\n\nTarget sukses diretas.\n\nHubungi Boss saya @SamRamadhan untuk keamanan akun anda",
+            "Meretas....  100%\n[████████████████████] Selesai",
 ]
 
 
@@ -291,7 +291,7 @@ def bombs(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(bomb_ettu[x%9])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('RIP PLOX...')
+    msg.edit_text('DUARRRRR...')
 
 
 
@@ -306,11 +306,11 @@ def bombs(bot: Bot, update: Update):
 @user_admin
 @run_async
 def hack(bot: Bot, update: Update):
-    msg = update.effective_message.reply_text('Target selected') 
+    msg = update.effective_message.reply_text('Target telah ditentukan') 
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('successful hacked')
+    msg.edit_text('Hubungi` @SamRamadhan `untuk keamanan akun anda` )
 
 
 
@@ -326,7 +326,7 @@ def love(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('പ്രണയം  😂 ')
+    msg.edit_text('I LOVE YOU' 😎)
 
 
 
