@@ -23,9 +23,9 @@ def generate_time(to_find: str, findtype: List[str]) -> str:
                 country_code = zone['countryCode']
 
                 if zone['dst'] == 1:
-                    daylight_saving = "Yes"
+                    daylight_saving = "Iya"
                 else:
-                    daylight_saving = "No"
+                    daylight_saving = "Tidak"
 
                 date_fmt = r"%d-%m-%Y"
                 time_fmt = r"%H:%M:%S"
@@ -39,13 +39,13 @@ def generate_time(to_find: str, findtype: List[str]) -> str:
                 break
 
     try:
-        result = (f"<b>🌍Country :</b> <code>{country_name}</code>\n"
-                  f"<b>⏳Zone Name :</b> <code>{country_zone}</code>\n"
-                  f"<b>🗺Country Code :</b> <code>{country_code}</code>\n"
-                  f"<b>🌞Daylight saving :</b> <code>{daylight_saving}</code>\n"
-                  f"<b>🌅Day :</b> <code>{current_day}</code>\n"
-                  f"<b>⌚Current Time :</b> <code>{current_time}</code>\n"
-                  f"<b>📆Current Date :</b> <code>{current_date}</code>")
+        result = (f"<b>🌍Negara :</b> <code>{country_name}</code>\n"
+                  f"<b>⏳Nama Zona :</b> <code>{country_zone}</code>\n"
+                  f"<b>�Kode Negara :</b> <code>{country_code}</code>\n"
+                  f"<b>🌞Hemat Siang Hari :</b> <code>{daylight_saving}</code>\n"
+                  f"<b>🌅Hari :</b> <code>{current_day}</code>\n"
+                  f"<b>⌚Waktu Saat Ini :</b> <code>{current_time}</code>\n"
+                  f"<b>📆Tanggal Sekarang :</b> <code>{current_date}</code>")
     except:
         result = None
 
@@ -70,7 +70,7 @@ def gettime(bot: Bot, update: Update):
         result = generate_time(query_timezone, ["zoneName", "countryName"])
 
     if not result:
-        send_message.edit_text(f"Timezone info not available for <b>{query}</b>", parse_mode=ParseMode.HTML)
+        send_message.edit_text(f"Info zona waktu tidak tersedia untuk <b>{query}</b>", parse_mode=ParseMode.HTML)
         return
 
     send_message.edit_text(result, parse_mode=ParseMode.HTML)
