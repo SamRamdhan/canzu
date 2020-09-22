@@ -131,7 +131,7 @@ hack_you = [
             "Meretas... 20.63%\n[███░░░░░░░░░░░░░░░░░] Proses",    
             "Meretas... 86.21%\n[███████████████░░░░░] Proses",
             "Meretas... 93.50%\n[█████████████████░░░] Proses",
-            "Meretas....  100%\n[████████████████████] Selesai",
+            "Meretas....  100%\n[████████████████████] Sukses",
 ]
 
 
@@ -310,7 +310,7 @@ def hack(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('`Target sukses diretas`)
+    msg.edit_text('`Hubungi Boss saya` @SamRamadhan `untuk keamanan akun anda`')
 
 
 
