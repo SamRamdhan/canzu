@@ -310,7 +310,7 @@ def hack(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(hack_you[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('`Hubungi Boss saya` @SamRamadhan `untuk keamanan akun anda`')
+    msg.edit_text('Hubungi Boss saya @SamRamadhan untuk keamanan akun anda')
 
 
 
@@ -326,7 +326,7 @@ def love(bot: Bot, update: Update):
     for x in range(EDIT_TIMES):
         msg.edit_text(love_siren[x%5])
         time.sleep(EDIT_SLEEP)
-    msg.edit_text('`I LOVE YOU` 😎')
+    msg.edit_text('I LOVE YOU 😎')
 
 
 
