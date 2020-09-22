@@ -54,7 +54,7 @@ def weather(bot, update, args):
         status += theweather._detailed_status
                         
 
-        update.message.reply_text("Today in {} is being {}, around {}°C.\n".format(thelocation,
+        update.message.reply_text("Cuaca di {} sedang {}, suhu sekitar {}°C.\n".format(thelocation,
                 status, temperature))
 
     except pyowm.exceptions.not_found_error.NotFoundError:
