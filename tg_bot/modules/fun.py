@@ -14,7 +14,7 @@ from tg_bot.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
-def gombal(bot: Bot, update: Update):
+def rayu(bot: Bot, update: Update):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
 
 
@@ -75,7 +75,7 @@ def toss(bot: Bot, update: Update):
 
 
 @run_async
-def rayu(bot: Bot, update: Update):
+def abuse(bot: Bot, update: Update):
     msg = update.effective_message
     reply_text = msg.reply_to_message.reply_text if msg.reply_to_message else msg.reply_text
     reply_text(random.choice(fun_strings.ABUSE_STRINGS))
