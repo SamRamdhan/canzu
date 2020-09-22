@@ -5,19 +5,19 @@ from tg_bot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler
 
 SFW_STRINGS = (
-    "HOW CAN I PROTECT MYSELF FROM CORONAVIRUS?",
-    "🧼WASH YOUR HANDS FREQUENTLY",
-    "🚴‍♂️EXCERCISE AND PROPER SLEEP🛌 WILL BOLSTER THE IMMUNE SYSTEM",
-    "🛀MAINTAIN GOOD HYGIENE HABHITS AT ALL TIMES",
-    "👬AVOID CONTACT WITH OTHERS",
-    "😷WEAR A FACE MASK WHEN DEALING WITH INFECTED PATIENT'S",
-    "🧻USE TISSUES WHEN COUGHING OR BLOWING NOSE",
-    "🍎WASH AND PREPARE FOODS CAREFULLY",
-    "STAY HOME STAY SAFE",
+    "`Cobalah bercermin, maka kamu akan tau arti segalanya bagiku.`",
+    "`Jika mencintaimu adalah tindakan yang melanggar hukum, aku pasti telah menjadi terpidana dengan hukuman paling lama.`",
+    "`IKAN HIU LAGI LAPER, I LOP YU POREPER`",
+    "`Pada rekah senyummu, disitulah seluruhnya rinduku tertuju.`",
+    "`Jika kamu ibarat bunga, aku akan menjadi pot sebagai tempatmu tumbuh menjadi indah.`",
+    "`Memang benar rindu adalah candu. Sehari saja tak bersamamu rasanya seperti ingin mati karena overdosis rindu.`",
+    "`Bolehkah aku memandangmu? Aku hanya ingin melihat masa depanku.`",
+    "`Bahkan dalam gelap gulitanya malam, wajahmu tetaplah bersinar di anganku.`",
+    "`Taukah kamu pelangi yang sering kupandangi ketika hujan reda? Ia malu menampakkan dirinya lagi setelah kuceritakan tentang keindahanmu.`",
   )
 
 @run_async
-def corona(bot: Bot, update: Update):
+def gombal(bot: Bot, update: Update):
     bot.sendChatAction(update.effective_chat.id, "typing") # Bot typing before send messages
     message = update.effective_message
     if message.reply_to_message:
@@ -26,10 +26,10 @@ def corona(bot: Bot, update: Update):
       message.reply_text(random.choice(SFW_STRINGS))
 
 __help__ = """
-- /corona  😷.
+- /gombal
 """
 
-__mod_name__ = "BREAK THE CHAIN"
+__mod_name__ = "GOMBAL"
 
 CRNA_HANDLER = DisableAbleCommandHandler("corona", corona)
 
