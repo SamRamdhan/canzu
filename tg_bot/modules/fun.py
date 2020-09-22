@@ -14,7 +14,7 @@ from tg_bot.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
-def runs(bot: Bot, update: Update):
+def gombal(bot: Bot, update: Update):
     update.effective_message.reply_text(random.choice(fun_strings.RUN_STRINGS))
 
 
