@@ -5,15 +5,18 @@ from tg_bot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler
 
 SFW_STRINGS = (
-    "`Cobalah bercermin, maka kamu akan tau arti segalanya bagiku.`",
-    "`Jika mencintaimu adalah tindakan yang melanggar hukum, aku pasti telah menjadi terpidana dengan hukuman paling lama.`",
-    "`IKAN HIU LAGI LAPER, I LOP YU POREPER`",
-    "`Pada rekah senyummu, disitulah seluruhnya rinduku tertuju.`",
-    "`Jika kamu ibarat bunga, aku akan menjadi pot sebagai tempatmu tumbuh menjadi indah.`",
-    "`Memang benar rindu adalah candu. Sehari saja tak bersamamu rasanya seperti ingin mati karena overdosis rindu.`",
-    "`Bolehkah aku memandangmu? Aku hanya ingin melihat masa depanku.`",
-    "`Bahkan dalam gelap gulitanya malam, wajahmu tetaplah bersinar di anganku.`",
-    "`Taukah kamu pelangi yang sering kupandangi ketika hujan reda? Ia malu menampakkan dirinya lagi setelah kuceritakan tentang keindahanmu.`",
+    "Cobalah bercermin, maka kamu akan tau arti segalanya bagiku.",
+    "Jika mencintaimu adalah tindakan yang melanggar hukum, aku pasti telah menjadi terpidana dengan hukuman paling lama.",
+    "IKAN HIU LAGI LAPER, I LOP YU POREPER",
+    "Pada rekah senyummu, disitulah seluruhnya rinduku tertuju.",
+    "Jika kamu ibarat bunga, aku akan menjadi pot sebagai tempatmu tumbuh menjadi indah.",
+    "Memang benar rindu adalah candu. Sehari saja tak bersamamu rasanya seperti ingin mati karena overdosis rindu.",
+    "Bolehkah aku memandangmu? Aku hanya ingin melihat masa depanku.",
+    "Bahkan dalam gelap gulitanya malam, wajahmu tetaplah bersinar di anganku.",
+    "Taukah kamu pelangi yang sering kupandangi ketika hujan reda? Ia malu menampakkan dirinya lagi setelah kuceritakan tentang keindahanmu.",
+    "Mengenalmu jadi membuatku sadar mengapa ada kata rindu.",
+    "Ijinkan aku menyebut namamu untuk selalu keselipkan pada doaku, meminta pada Tuhan supaya kita dipersatukan.",
+    "Padahal aku belum mati, tapi sudah ku rasakan surga saat di dekatmu.",
   )
 
 @run_async
