@@ -40,7 +40,7 @@ Saya adalah bot admin khusus untuk grup @KerabatOnline.
 Grup untuk bermain berbagai macam game yang ada ditelegram atau untuk mencari kenalan baru.
 Pengguna ini adalah [Foundernya](tg://user?id={}).
 
-Program bot saya dikhususkan untuk kepentingan Kerabat Online Grup.
+Program bot saya banyak yang dikhususkan untuk kepentingan Kerabat Online Grup.
 Jadi tidak tersedia untuk grup lain, mohon pengertiannya.
 
 Gabung dan ramaikan juga
@@ -60,7 +60,7 @@ Halo! nama saya *{}*.
  - /help <nama modul>: memberikan info tentang modulnya.
  - /settings:
    - di PM: akan mengirimkan pengaturan untuk semua modul pendukung.
-   - in a group: akan mengarahkan anda ke PM, dengan semua pengaturan chat.
+   - di Grup: akan mengarahkan anda ke PM, dengan semua pengaturan chat.
 
 
 {}
