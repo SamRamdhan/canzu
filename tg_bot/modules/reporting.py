@@ -78,19 +78,19 @@ def report(bot: Bot, update: Update) -> str:
 
         if chat.username and chat.type == Chat.SUPERGROUP:
 
-            reported = f"{mention_html(user.id, user.first_name)} reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
+            reported = f"{mention_html(user.id, user.first_name)} ada laporan {mention_html(reported_user.id, reported_user.first_name)} kepada admin!"
 
             msg = (f"<b>{html.escape(chat.title)}:</b>\n"
-                   f"<b>Reported user:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
-                   f"<b>Reported by:</b> {mention_html(user.id, user.first_name)} (<code>{user.id}</code>)")
-            link = f'\n<b>Link:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
+                   f"<b>Melaporkan pengguna:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
+                   f"<b>Laporan dari:</b> {mention_html(user.id, user.first_name)} (<code>{user.id}</code>)")
+            link = f'\n<b>Tautan:</b> <a href="https://t.me/{chat.username}/{message.message_id}">click here</a>'
 
             should_forward = False
         else:
-            reported = f"{mention_html(user.id, user.first_name)} reported " \
-                       f"{mention_html(reported_user.id, reported_user.first_name)} to the admins!"
+            reported = f"{mention_html(user.id, user.first_name)} dilaporkan" \
+                       f"{mention_html(reported_user.id, reported_user.first_name)} kepada admin!"
 
-            msg = f'{mention_html(user.id, user.first_name)} is calling for admins in "{html.escape(chat_name)}"!'
+            msg = f'{mention_html(user.id, user.first_name)} memanggil admin di "{html.escape(chat_name)}"!'
             link = ""
             should_forward = True
 
