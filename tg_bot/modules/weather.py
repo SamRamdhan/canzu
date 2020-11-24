@@ -33,23 +33,23 @@ def weather(bot, update, args):
         # Weather symbols
         status = ""
         status_now = theweather.get_weather_code()
-        if status_now < 232: # Rain storm
+        if status_now < 232: # Hujan Petir
             status += "⛈️ "
         elif status_now < 321: # Drizzle
             status += "🌧️ "
-        elif status_now < 504: # Light rain
+        elif status_now < 504: # Hujan Matahari
             status += "🌦️ "
-        elif status_now < 531: # Cloudy rain
+        elif status_now < 531: # Hujan
              status += "⛈️ "
-        elif status_now < 622: # Snow
+        elif status_now < 622: # Salju
             status += "🌨️ "
-        elif status_now < 781: # Atmosphere
+        elif status_now < 781: # Angin Kencang
             status += "🌪️ "
-        elif status_now < 800: # Bright
+        elif status_now < 800: # Cerah
             status += "🌤️ "
-        elif status_now < 801: # A little cloudy
+        elif status_now < 801: # Sedikit Berawan
              status += "⛅️ "
-        elif status_now < 804: # Cloudy
+        elif status_now < 804: # Berawan
              status += "☁️ "
         status += theweather._detailed_status
                         
